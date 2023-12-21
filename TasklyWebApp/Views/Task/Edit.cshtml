@@ -1,0 +1,41 @@
+﻿@model ToDo
+
+<form method="post" asp-action="Edit">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary"> Edit Task </h2>
+            <hr />
+        </div>
+         <div asp-validation-summary="All" class="text-danger"></div> 
+        <div class="mb-3">
+            <label asp-for="TaskName"></label>
+            <input asp-for="TaskName" class="form-control" />
+            <span asp-validation-for="TaskName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DueDate"></label>
+            <input asp-for="DueDate" class="form-control" />
+            <span asp-validation-for="DueDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ExtraNotes"></label>
+            <input asp-for="ExtraNotes" class="form-control" />
+            <span asp-validation-for="ExtraNotes" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="TaskPriority"></label>
+            <input asp-for="TaskPriority" class="form-control" />
+            <span asp-validation-for="TaskPriority" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Edit Task</button>
+        <a asp-controller="Task" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
